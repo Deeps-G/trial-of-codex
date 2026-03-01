@@ -13,7 +13,21 @@ The app uses four agents with explicit responsibilities:
 
 The orchestrator runs the research stage in parallel using a thread pool to model true multi-agent collaboration.
 
-## Run the app
+## Run in browser (visible on screen)
+
+```bash
+python web_app.py --port 8000
+```
+
+Then open:
+
+```text
+http://localhost:8000
+```
+
+Enter a task and click **Run agents**.
+
+## Run in terminal
 
 ```bash
 python app.py "Create a GTM plan for an AI scheduling assistant"
@@ -35,8 +49,10 @@ python -m unittest discover -s tests -p "test_*.py"
 
 - `multi_agent_app/agents.py` – agent implementations and planning data structures.
 - `multi_agent_app/orchestrator.py` – pipeline coordination and parallel research execution.
-- `app.py` – CLI interface.
-- `tests/test_orchestrator.py` – integration-style orchestration checks.
+- `app.py` – terminal CLI interface.
+- `web_app.py` – browser UI server.
+- `tests/test_orchestrator.py` – orchestration and CLI checks.
+- `tests/test_web_app.py` – UI rendering checks.
 
 ## How to customize
 
